@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212429;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+        }
+        .restaurant-image {
+            max-width: 100%;
+        }
+        .navbar {
+            justify-content: center;
+        }
+        .banner {
+            position: relative;
+            overflow: hidden;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .home-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .more-button {
+            background-color: #212429; /* Blue color for the button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: Text;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="firstPage.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="secondPage.html">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="thirdPage.html">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="banner">
+    <img src="Pictures/Banner.jpg" alt="Italian Restaurant Banner">
+    <div class="banner-caption">
+    </div>
+</div>
+<div class="header-container">
+    <h2>Welcome to Autentica Cucina Italiana</h2>
+    <div class="open-status" id="open-status"></div>
+    <img alt="Italian Restaurant" class="restaurant-image" src="Pictures/logo.jpg">
+</div>
+<div class="home-content">
+    <h3>About Us</h3>
+    <p>At Autentica Cucina Italiana, we are dedicated to bringing you the finest Italian cuisine crafted with love and passion. Our chefs, inspired by the traditions of Italy, use only the freshest ingredients to create dishes that will transport you to the heart of Italy.</p>
+    <a href="secondPage.html" class="more-button">More</a>
+
+    <h3>Our Menu</h3>
+    <p>Explore our diverse menu, featuring classic Italian dishes such as handmade pasta, wood-fired pizzas, and delectable desserts. Whether you're a fan of traditional favorites or looking to savor something unique, our menu has something to satisfy every palate.</p>
+
+    <h3>Visit Us</h3>
+    <!-- Make "UNCG" a clickable link to Google Maps -->
+    <p>Located in the heart of <a href="https://www.google.com/maps?q=UNCG" target="_blank" rel="noopener noreferrer">UNCG</a>, our restaurant offers a warm and inviting atmosphere perfect for any occasion. Join us for a romantic dinner, a family celebration, or a gathering with friends. We look forward to serving you.</p>
+</div>
+<script>
+    // JavaScript to determine whether the restaurant is open or closed
+    function checkOpenStatus() {
+        const now = new Date();
+        const currentHour = now.getHours();
+        const isOpen = currentHour >= 11 && currentHour <= 20.5; // Change the opening and closing hours as needed
+        const openStatusElement = document.getElementById('open-status');
+
+        if (isOpen) {
+            openStatusElement.textContent = 'Open Now';
+            openStatusElement.style.color = 'green'; // Set the color to indicate it's open
+        } else {
+            openStatusElement.textContent = 'Closed';
+            openStatusElement.style.color = 'red'; // Set the color to indicate it's closed
+        }
+    }
+
+    // Call the function when the page loads to set the initial status
+    checkOpenStatus();
+</script>
+</body>
+</html>
